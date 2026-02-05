@@ -28,7 +28,6 @@ int64_t FindValue(VarPair *var_map, int len, char *key) {
 
 int AddValue(VarPair *var_map, int len, char* name) {
     for (int i = 0; i < len; ++i) {
-        fflush(stdout);
         if (var_map[i].var_name == NULL) {
             var_map[i].var_name = name;
             return i;
@@ -145,7 +144,6 @@ void Eval(Context *ctx, ASTNode *node) {
         }
         case VarDeclNodeType: {
             AddValue(ctx->var_map, STACK_SIZE, node->var_name);
-            fflush(stdout);
             ctx->value.value_type = VarName;
             ctx->value.var_name = node->var_name;
             break;

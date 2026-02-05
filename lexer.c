@@ -163,7 +163,6 @@ void print_token(Token token) {
             break;
     }
     printf("\n");
-    fflush(stdout);
 }
 
 Lexer create_lexer(char *text) {
